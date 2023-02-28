@@ -7,11 +7,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('God of War Ragnarok'),
-        elevation: 10,
+        elevation: 5,
       ),
-      body: Center(
-        child: Text('There shall be Ragnarok'),
-        // asdf
+      body: CustomSreen(
+        color: Colors.blue,
       ),
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(
@@ -19,5 +18,19 @@ class HomeScreen extends StatelessWidget {
         BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
       ]),
     );
+  }
+}
+
+class CustomSreen extends StatelessWidget {
+  final Color color;
+  const CustomSreen({required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        color: color,
+        child: Center(
+          child: Text('Custom Screen'),
+        ));
   }
 }
